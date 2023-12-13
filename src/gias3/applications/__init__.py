@@ -17,5 +17,14 @@ This file is part of GIAS. (https://bitbucket.org/jangle/gias)
     You should have received a copy of the GNU General Public License
     along with GIAS.  If not, see <http://www.gnu.org/licenses/>..
 """
-__version__ = "3.0.0"
+import os
+import logging
 
+log = logging.getLogger(__name__)
+
+if 'ETS_TOOLKIT' not in os.environ:
+    os.environ['ETS_TOOLKIT'] = 'qt4'
+elif os.environ['ETS_TOOLKIT'] != 'qt4':
+    log.warning("'ETS_TOOLKIT' environment variable does not match the version required for this module ('qt4')")
+
+__version__ = "3.0.2"

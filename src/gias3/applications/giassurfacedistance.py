@@ -28,6 +28,7 @@ from gias3.mesh import vtktools
 
 log = logging.getLogger(__name__)
 
+
 try:
     from gias3.visualisation import fieldvi
 
